@@ -8,6 +8,7 @@ var PORT = process.env.PORT || 8000;
 //set up express code
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '/public')));
 //set up paths
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));
