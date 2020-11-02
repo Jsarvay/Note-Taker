@@ -17,9 +17,10 @@ html, body {
 
 .note-textarea, .note-title {
   color: #000000;
-  width: 100%;
   outline: none;
   border: none;
+  display: flex;
+  width: 100%;
 }
 
 .note-textarea {
@@ -31,6 +32,7 @@ html, body {
 .note-title {
   height: 50px;
   margin-top: 13px;
+  margin-bottom: 10px;
   font-size: 3rem;
 }
 
