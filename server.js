@@ -19,13 +19,14 @@ app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
   });
 //set up api routes
+//set up out get command
 app.get("/api/notes", function(req, res) {
   fs.readFile(path.join(__dirname, "/db/db.json"), "utf8", (err, data) => {
       if (err) throw err;
       res.json(JSON.parse(data));
   });
 });
-
+//set up post command
 app.post("/api/notes", function(req, res) {
   let id = uuidv4();
   let note = {
@@ -50,7 +51,7 @@ app.post("/api/notes", function(req, res) {
       });
   });
 });
-
+//set up delete command
 app.delete("/api/notes/:id", function(req, res) {
   let setId = req.params.id;
 
